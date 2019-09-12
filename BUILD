@@ -23,8 +23,9 @@ java_image(
     visibility = ["//visibility:public"],
     args = [
         "--unsecure-port=5000",
-        "-c",
-        "config/config.yml",
+        "-c", "config/config.yml",
+        "--maven-settings='/maven-credentials/settings.xml'",
+        "--local-maven-repository='/tmp'"
     ],
 )
 
