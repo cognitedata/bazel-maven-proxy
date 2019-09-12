@@ -45,7 +45,7 @@ container_image(
 )
 
 container_push(
-    name = "container_image_push",
+    name = "container_push",
     image = ":container_image",
     format = "Docker",
     registry = "eu.gcr.io",
