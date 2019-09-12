@@ -24,8 +24,8 @@ java_image(
     args = [
         "--unsecure-port=5000",
         "-c", "config/config.yml",
-        "--maven-settings='/maven-credentials/settings.xml'",
-        "--local-maven-repository='/tmp'"
+        "--maven-settings=/maven-credentials/settings.xml",
+        "--local-maven-repository=/tmp"
     ],
 )
 
