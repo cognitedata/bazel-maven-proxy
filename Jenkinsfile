@@ -1,6 +1,6 @@
 @Library('jenkins-helpers@v0.1.23') _
 
-def label = "ark-${UUID.randomUUID().toString()}"
+def label = "bazel-maven-proxy-${UUID.randomUUID().toString()}"
 podTemplate(
         label: label,
         annotations: [
@@ -16,7 +16,8 @@ podTemplate(
                               resourceLimitMemory: '4000Mi'),
         ],
         volumes: [
-                secretVolume(secretName: 'maven-credentials', mountPath: '/maven-credentials')
+            secretVolume(secretName: 'maven-credentials', mountPath: '/maven-credentials'),
+            secretVolume(secretName: 'jenkins-docker-builder', mountPath: '/jenkins-docker-builder'),
         ]) 
 {
     node(label) {
