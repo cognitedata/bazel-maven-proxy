@@ -30,6 +30,7 @@ podTemplate(
         }
         container('bazel') {
             stage("bazel build") {
+                sh(returnStatus: true, script: 'docker login -u _json_key -p "$(cat /jenkins-docker-builder/credentials.json)" https://eu.gcr.io')
                 sh(returnStatus: true, script: 'bazel run //:container_push')
             }
         }
