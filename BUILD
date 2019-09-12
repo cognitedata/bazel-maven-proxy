@@ -21,6 +21,11 @@ java_image(
     	"//server:server"
     ],
     visibility = ["//visibility:public"],
+    args = [
+        "--unsecure-port=5000",
+        "-c",
+        "config/config.yml",
+    ],
 )
 
 pkg_tar(
