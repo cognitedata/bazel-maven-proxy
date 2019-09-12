@@ -1,0 +1,10 @@
+# Proxy Configuration
+
+# all proxies are specified under 'mavenRepositories'
+mavenRepositories:
+   # the id of a Maven repository
+   # - used as part of the final proxy url: https://localhost:8499/maven/cognite.jfrog.io
+   # - used to lookup username/password info from Maven's ~/.m2/settings.xml
+   cognite.jfrog.io:
+      url: https://cognite.jfrog.io
+

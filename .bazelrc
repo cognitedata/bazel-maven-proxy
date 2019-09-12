@@ -1,1 +1,1 @@
-build --javabase=@bazel_tools//tools/jdk:remote_jdk11
+build --javabase=@bazel_tools//tools/jdk:remote_jdk11 --host_force_python=PY2
