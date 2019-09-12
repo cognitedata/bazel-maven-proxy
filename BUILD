@@ -45,10 +45,19 @@ container_image(
 )
 
 container_push(
-    name = "container_push",
+    name = "container_push_dev",
     image = ":container_image",
     format = "Docker",
     registry = "eu.gcr.io",
     repository = "cognitedata-development/maven-proxy",
     tag = "dev-{BUILD_USER}",
+)
+
+container_push(
+    name = "container_push",
+    image = ":container_image",
+    format = "Docker",
+    registry = "eu.gcr.io",
+    repository = "cognitedata/maven-proxy",
+    tag = "latest",
 )
