@@ -49,7 +49,7 @@ container_push(
     image = ":container_image",
     format = "Docker",
     registry = "eu.gcr.io",
-    repository = "cognitedata-development/maven-proxy",
+    repository = "cognitedata-development/bazel-maven-proxy",
     tag = "dev-{BUILD_USER}",
 )
 
@@ -58,6 +58,6 @@ container_push(
     image = ":container_image",
     format = "Docker",
     registry = "eu.gcr.io",
-    repository = "cognitedata/maven-proxy",
+    repository = "cognitedata/bazel-maven-proxy",
     tag = "latest",
 )
