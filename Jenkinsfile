@@ -16,8 +16,8 @@ podTemplate(
                               resourceLimitMemory: '4000Mi'),
         ],
         volumes: [
-            secretVolume(secretName: 'maven-credentials', mountPath: '/maven-credentials'),
             secretVolume(secretName: 'jenkins-docker-builder', mountPath: '/jenkins-docker-builder'),
+            hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock'),
         ]) 
 {
     node(label) {
