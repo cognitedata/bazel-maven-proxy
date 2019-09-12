@@ -56,3 +56,27 @@ maven_install(
 	    "https://repo1.maven.org/maven2",
     ],
 )
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "e513c0ac6534810eb7a14bf025a0f159726753f97f74ab7863c650d26e01d677",
+    strip_prefix = "rules_docker-0.9.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.9.0/rules_docker-v0.9.0.tar.gz"],
+)
+
+load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
+
+container_repositories()
+
+load("@io_bazel_rules_docker//java:image.bzl", _java_image_repos = "repositories")
+
+_java_image_repos()
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull",)
+
+container_pull(
+	name = "java_base_11",
+	registry = "gcr.io",
+	repository = "distroless/java",
+	digest = "sha256:692afa607f48f8662756a8b1c0099b4f95752fc68e75c6e82f2d822a94587a60",
+)
