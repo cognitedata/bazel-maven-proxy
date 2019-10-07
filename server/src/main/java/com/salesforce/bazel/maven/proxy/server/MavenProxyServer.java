@@ -118,7 +118,7 @@ public class MavenProxyServer implements Callable<Void> {
 			LOG.warn("Configuring unsecure communication on port {}.", unsecurePort);
 			ServerConnector connector = new ServerConnector(server);
 			connector.setPort(unsecurePort);
-			connector.setHost("127.0.0.1");
+			connector.setHost("0.0.0.0");
 			server.addConnector(connector);
 		}
 
