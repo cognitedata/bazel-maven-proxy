@@ -78,5 +78,5 @@ container_pull(
 	name = "java_base_11",
 	registry = "gcr.io",
 	repository = "distroless/java",
-	digest = "sha256:8c2779a0aa6ba72ed80eeb9263849ddc84eef559b13e5311e080c2614f11ea15",
+	digest = "sha256:8c2779a0aa6ba72ed80eeb9263849ddc84eef559b13e5311e080c2614f11ea15", # debug image, need shell to launch the binary at will
 )
