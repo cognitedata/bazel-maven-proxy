@@ -29,24 +29,12 @@ java_image(
     ],
 )
 
-pkg_tar(
-    name = "proxy_config",
-    package_dir = "/config",
-    srcs = [
-        "config.yml"
-        ],
-    mode = "0644",
-)
-
 container_image(
     name = "container_image",
     base = ":maven_proxy_image",
     ports = ["5000"],
     directory = "/app",
     workdir = "/app",
-    tars = [
-        ":proxy_config"
-    ],  
     legacy_run_behavior = False,
 )
 
