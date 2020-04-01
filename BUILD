@@ -29,7 +29,7 @@ java_image(
     ],
 )
 
-sh_binary(
+filegroup(
     name = "proxy",
     srcs = ["proxy.sh"],
 )
