@@ -29,6 +29,11 @@ java_image(
     ],
 )
 
+filegroup(
+    name = "proxy",
+    srcs = ["proxy.sh"],
+)
+
 container_image(
     name = "container_image",
     base = ":maven_proxy_image",
@@ -36,6 +41,11 @@ container_image(
     directory = "/app",
     workdir = "/app",
     legacy_run_behavior = False,
+    files = [":proxy"],
+    entrypoint = [
+    "sh",
+    "-c",
+    "cat"],
 )
 
 container_push(
